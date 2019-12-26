@@ -19,6 +19,41 @@ class LinkedList{
       this.getTail().next = new Node(value,null);;
     }
   };
+
+  get(){
+    let arr = [];
+    let tail = this.head;
+    if(tail === null){
+      return arr;
+    }
+    while(tail.next!=null){
+      arr.push(tail.value);
+      tail = tail.next;
+    }
+    if(tail.next===null){
+      arr.push(tail.value);
+    }
+    return arr;
+
+  }
+
+  size(){
+    let tail = this.head;
+    if(tail === null){
+      return 0;
+    };
+
+    let count = 1;
+    while(tail.next!=null){
+      count++;
+      tail = tail.next;
+    }
+    return count;
+  }
+  remove(){
+
+  }
+
 }
 
 class Node{
@@ -31,9 +66,20 @@ class Node{
 
 let a = new LinkedList();
 console.log(a);
+console.log(a.size());
+console.log(a.get());
+
 a.add('first');
 console.log(a);
+console.log(a.size());
+console.log(a.get());
+
 a.add('second');
 console.log(a);
+console.log(a.size());
+console.log(a.get());
+
 a.add('trird');
 console.log(a);
+console.log(a.size());
+console.log(a.get());
